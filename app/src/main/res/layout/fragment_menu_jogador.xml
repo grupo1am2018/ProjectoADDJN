@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/content"
+    tools:context=".listarJogadores.MenuJogador">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/bannerListarJogador"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/banner_listar_jogador" />
+
+        <Button
+            android:id="@+id/btnListarJogadores"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="#C6363C"
+            android:fontFamily="raleway"
+            android:text="LISTAR JOGADORES"
+            android:textAlignment="center"
+            android:textColor="#edb92e"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/bannerPlantel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/banners_plantel" />
+
+        <Button
+            android:id="@+id/btnPlantel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="#C6363C"
+            android:fontFamily="raleway"
+            android:text="GESTÃO DO PLANTEL"
+            android:textAlignment="center"
+            android:textColor="#edb92e"
+            android:textStyle="bold" />
+    </LinearLayout>
+</FrameLayout>

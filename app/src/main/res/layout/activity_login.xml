@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="pt.ipca.projectoaddjn.login.Login">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:background="@drawable/loginfundo">
+
+
+        <ImageView
+            android:layout_width="311dp"
+            android:layout_height="306dp"
+            android:src="@drawable/logologinteste"
+            tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/edtEmail"
+                android:layout_width="311dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:text="teste@ipca.pt"
+                android:fontFamily="raleaway"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:textColor="#0c4076" />
+
+        <EditText
+            android:id="@+id/edtPassword"
+            android:layout_width="311dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="123456"
+            android:fontFamily="raleaway"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColor="#0c4076"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:onClick="btn_login"
+            android:layout_width="306dp"
+            android:layout_height="38dp"
+            android:background="#c6363c"
+            android:fontFamily="raleaway"
+            android:text="LOGIN"
+            android:textColor="#edb92e"
+            android:textStyle="bold"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btnRegistar"
+            android:onClick="btn_Registar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#c6363c"
+            android:layout_marginTop="90dp"
+            android:layout_gravity="right"
+            android:fontFamily="raleaway"
+            android:text="Registar"
+            android:textColor="#edb92e"
+            android:textStyle="bold"
+            tools:ignore="MissingConstraints,OnClick" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

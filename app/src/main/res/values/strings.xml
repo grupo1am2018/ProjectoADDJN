@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">ProjectoADDJN</string>
+    <string name="title_activity_menu_principal">MenuPrincipal</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_jogos">Jogos</string>
+    <string name="title_calendario">Calendáro</string>
+    <string name="title_jogadores">Jogadores</string>
+    <string name="title_chat">Chat</string>
+    <string name="title_activity_chat">chat</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nome_de_utilizador">Nome de Utilizador</string>
+    <string name="email">Email</string>
+    <string name="registar_utilizador">Registar Utilizador</string>
+    <string name="password">Password</string>
+</resources>
