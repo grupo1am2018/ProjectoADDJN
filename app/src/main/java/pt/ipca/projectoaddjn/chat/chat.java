@@ -47,7 +47,8 @@ public class chat extends Fragment {
         // Required empty public constructor
     }
 
-// isto apenas é um teste
+// isto apenas é um teste para envio no githubsdfklljfs
+    // outro tese
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
