@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.os.*;
 import android.support.v4.app.Fragment;
 import android.text.format.DateFormat;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -76,17 +78,17 @@ public class chat extends Fragment {
 
     private void displayChatMessage() {
 
-        ListView listaChat = (ListView) rootView.findViewById(R.id.listaChat);
+        final ListView listaChat = (ListView) rootView.findViewById(R.id.listaChat);
         adapter = new FirebaseListAdapter<ChatMessage>(getActivity(), ChatMessage.class, R.layout.lista_chat,FirebaseDatabase.getInstance().getReference("CHAT"))
         {
             @Override
-            protected void populateView(View v, ChatMessage model, int position) {
+            protected void populateView(final View v, ChatMessage model, int position) {
 
                 TextView messageText, messageUser, messageTime;
                 messageText = (TextView) v.findViewById(R.id.message_text);
                 messageUser = (TextView) v.findViewById(R.id.message_user);
                 messageTime = (TextView) v.findViewById(R.id.message_time);
-                RelativeLayout chatrl = v.findViewById(R.id.chatrl);
+                final RelativeLayout chatrl = v.findViewById(R.id.chatrl);
 
                 messageText.setText(model.getMessageText());
                 messageUser.setText(model.getMessageUser());
@@ -96,7 +98,8 @@ public class chat extends Fragment {
                     @Override
                     public boolean onLongClick(View view) {
 
-                        Toast.makeText(getActivity() , "A funcionar", Toast.LENGTH_LONG).show();
+                        registerForContextMenu(chatrl);
+
 
                         return false;
                     }
@@ -104,5 +107,12 @@ public class chat extends Fragment {
             }
         };
         listaChat.setAdapter(adapter);
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        MenuInflater inflater = getActivity().getMenuInflater();
+        inflater.inflate(R.menu.menuchat, menu);
     }
 }
