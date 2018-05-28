@@ -97,7 +97,7 @@ public class chat extends Fragment {
                     @Override
                     public boolean onLongClick(View view) {
 
-                        Toast.makeText(getActivity() , "LONG CLICK FUNCIONA CRLH!!", Toast.LENGTH_LONG).show();
+
 
                         return false;
                     }
