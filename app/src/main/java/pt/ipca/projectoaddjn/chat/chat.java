@@ -47,7 +47,7 @@ public class chat extends Fragment {
         // Required empty public constructor
     }
 
-
+// isto apenas é um teste
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
