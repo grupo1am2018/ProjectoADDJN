@@ -47,8 +47,7 @@ public class chat extends Fragment {
         // Required empty public constructor
     }
 
-// isto apenas é um teste para envio no githubsdfklljfs
-    // outro tese
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -97,7 +96,7 @@ public class chat extends Fragment {
                     @Override
                     public boolean onLongClick(View view) {
 
-
+                        Toast.makeText(getActivity() , "LONG CLICK FUNCIONA CRLH!!", Toast.LENGTH_LONG).show();
 
                         return false;
                     }
