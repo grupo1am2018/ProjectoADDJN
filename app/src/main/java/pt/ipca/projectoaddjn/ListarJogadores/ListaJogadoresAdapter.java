@@ -2,7 +2,10 @@ package pt.ipca.projectoaddjn.ListarJogadores;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
@@ -11,6 +14,10 @@ import android.view.ViewGroup;
 
 import com.squareup.picasso.Picasso;
 
+import pt.ipca.projectoaddjn.Jogador.JogadorFragment;
+import pt.ipca.projectoaddjn.Login.Login;
+import pt.ipca.projectoaddjn.MenuPrincipal;
+import pt.ipca.projectoaddjn.Plantel.PlantelFragment;
 import pt.ipca.projectoaddjn.R;
 
 public class ListaJogadoresAdapter extends RecyclerView.Adapter<ListaJogadorHolder>  {
@@ -60,6 +67,9 @@ public class ListaJogadoresAdapter extends RecyclerView.Adapter<ListaJogadorHold
             @Override
             public void onClick(View v) {
 
+                AppCompatActivity MenuPrincipal = (AppCompatActivity) v.getContext();
+                JogadorFragment JogadorFragment = new JogadorFragment();
+                MenuPrincipal.getSupportFragmentManager().beginTransaction().replace(R.id.container, JogadorFragment).addToBackStack(null).commit();
             }
         });
     }
