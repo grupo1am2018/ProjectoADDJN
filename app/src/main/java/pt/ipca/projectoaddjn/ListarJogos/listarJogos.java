@@ -1,4 +1,4 @@
-package pt.ipca.projectoaddjn.listarJogos;
+package pt.ipca.projectoaddjn.ListarJogos;
 
 
 import android.os.Bundle;
@@ -11,6 +11,10 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
+import pt.ipca.projectoaddjn.BaseDados.Classes.Competicao;
+import pt.ipca.projectoaddjn.BaseDados.Classes.Equipa;
+import pt.ipca.projectoaddjn.BaseDados.Classes.EstatisticasJogo;
+import pt.ipca.projectoaddjn.BaseDados.Classes.Jogo;
 import pt.ipca.projectoaddjn.R;
 
 /**

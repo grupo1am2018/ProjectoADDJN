@@ -1,15 +1,16 @@
-package pt.ipca.projectoaddjn.chat;
+package pt.ipca.projectoaddjn.Chat;
 
 
 import android.os.Bundle;
-import android.os.*;
 import android.support.v4.app.Fragment;
 import android.text.format.DateFormat;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -19,19 +20,9 @@ import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
 
 import pt.ipca.projectoaddjn.R;
-import pt.ipca.projectoaddjn.login.Login;
 
 
 /**
@@ -79,10 +70,10 @@ public class chat extends Fragment {
     private void displayChatMessage() {
 
         final ListView listaChat = (ListView) rootView.findViewById(R.id.listaChat);
-        adapter = new FirebaseListAdapter<ChatMessage>(getActivity(), ChatMessage.class, R.layout.lista_chat,FirebaseDatabase.getInstance().getReference("CHAT"))
+        adapter = new FirebaseListAdapter<ChatMessage>(getActivity(), ChatMessage.class, R.layout.lista_chat, FirebaseDatabase.getInstance().getReference("CHAT"))
         {
             @Override
-            protected void populateView(final View v, ChatMessage model, int position) {
+            protected void populateView(final View v, ChatMessage model, final int position) {
 
                 TextView messageText, messageUser, messageTime;
                 messageText = (TextView) v.findViewById(R.id.message_text);
@@ -98,8 +89,8 @@ public class chat extends Fragment {
                     @Override
                     public boolean onLongClick(View view) {
 
+                        // Chamar menu de opções
                         registerForContextMenu(chatrl);
-
 
                         return false;
                     }
@@ -115,4 +106,23 @@ public class chat extends Fragment {
         MenuInflater inflater = getActivity().getMenuInflater();
         inflater.inflate(R.menu.menuchat, menu);
     }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        switch (item.getItemId()) {
+            case R.id.menuchat_apagar:
+                //adapter.getRef(position).removeValue();
+                return true;
+            default:
+                return super.onContextItemSelected(item);
+        }
+    }
+
+    // Prodecidemntos para eleminar as mensagens
+    public void RemoverMensagens(int position) {
+        adapter.getRef(position).removeValue();
+        Toast.makeText(getActivity(), "Mensagem apagada com Sucesso!", Toast.LENGTH_LONG).show();
+    }
+
 }

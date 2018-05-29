@@ -7,9 +7,9 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-import pt.ipca.projectoaddjn.chat.chat;
-import pt.ipca.projectoaddjn.listarJogadores.MenuJogador;
-import pt.ipca.projectoaddjn.listarJogos.listarJogos;
+import pt.ipca.projectoaddjn.Chat.chat;
+import pt.ipca.projectoaddjn.ListarJogadores.MenuJogador;
+import pt.ipca.projectoaddjn.ListarJogos.listarJogos;
 
 
 public class MenuPrincipal extends AppCompatActivity {

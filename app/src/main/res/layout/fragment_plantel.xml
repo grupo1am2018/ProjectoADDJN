@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/bfllcampo"
-    tools:context=".plantel.PlantelFragment">
+    tools:context=".Plantel.PlantelFragment">
 
     <ImageView
         android:layout_width="match_parent"

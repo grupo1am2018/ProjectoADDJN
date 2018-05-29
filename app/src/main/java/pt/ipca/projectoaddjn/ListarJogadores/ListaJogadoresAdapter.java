@@ -1,4 +1,4 @@
-package pt.ipca.projectoaddjn.listarJogadores;
+package pt.ipca.projectoaddjn.ListarJogadores;
 
 import android.app.Activity;
 import android.content.Context;
@@ -59,10 +59,7 @@ public class ListaJogadoresAdapter extends RecyclerView.Adapter<ListaJogadorHold
         holder.logo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /**
-                Intent myIntent = new Intent(context, MenuPrincipal.class);
-                context.startActivity(myIntent);
-                 **/
+
             }
         });
     }

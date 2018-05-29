@@ -1,6 +1,4 @@
-package pt.ipca.projectoaddjn.chat;
-
-import java.util.Date;
+package pt.ipca.projectoaddjn.Chat;
 
 /**
   Created by Nuno on 08/05/2018.

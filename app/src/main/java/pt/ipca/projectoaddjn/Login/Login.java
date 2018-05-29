@@ -1,4 +1,4 @@
-package pt.ipca.projectoaddjn.login;
+package pt.ipca.projectoaddjn.Login;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import pt.ipca.projectoaddjn.MenuPrincipal;
 import pt.ipca.projectoaddjn.R;
-import pt.ipca.projectoaddjn.registarUser.registarUser;
+import pt.ipca.projectoaddjn.RegistarUser.registarUser;
 
 public class Login extends AppCompatActivity {
 

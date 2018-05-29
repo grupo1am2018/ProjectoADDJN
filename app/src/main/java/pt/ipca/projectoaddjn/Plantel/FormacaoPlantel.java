@@ -1,4 +1,4 @@
-package pt.ipca.projectoaddjn.plantel;
+package pt.ipca.projectoaddjn.Plantel;
 
 class FormacaoPlantel {
     float x, y;

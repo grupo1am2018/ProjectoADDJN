@@ -1,4 +1,4 @@
-package pt.ipca.projectoaddjn.listarJogadores;
+package pt.ipca.projectoaddjn.ListarJogadores;
 
 
 import android.support.v7.widget.RecyclerView;

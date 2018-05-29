@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".login.Login"
+            android:name=".Login.Login"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +21,7 @@
         <activity
             android:name=".MenuPrincipal"
             android:label="@string/title_activity_menu_principal" />
-        <activity android:name=".registarUser.registarUser" android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity android:name=".RegistarUser.registarUser" android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
     </application>
 
 </manifest>

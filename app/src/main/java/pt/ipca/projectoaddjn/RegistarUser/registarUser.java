@@ -1,4 +1,4 @@
-package pt.ipca.projectoaddjn.registarUser;
+package pt.ipca.projectoaddjn.RegistarUser;
 
 import android.app.ProgressDialog;
 import android.support.annotation.NonNull;

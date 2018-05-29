@@ -1,4 +1,4 @@
-package pt.ipca.projectoaddjn.listarJogadores;
+package pt.ipca.projectoaddjn.ListarJogadores;
 
 
 import android.os.Bundle;
@@ -10,8 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import pt.ipca.projectoaddjn.R;
-import pt.ipca.projectoaddjn.listarJogadores.ListaJogadores;
-import pt.ipca.projectoaddjn.plantel.PlantelFragment;
+import pt.ipca.projectoaddjn.Plantel.PlantelFragment;
 
 
 /**

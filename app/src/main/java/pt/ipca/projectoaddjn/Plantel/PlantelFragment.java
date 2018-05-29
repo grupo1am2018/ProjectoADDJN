@@ -1,4 +1,4 @@
-package pt.ipca.projectoaddjn.plantel;
+package pt.ipca.projectoaddjn.Plantel;
 
 
 import android.content.Context;
@@ -16,9 +16,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 import pt.ipca.projectoaddjn.R;

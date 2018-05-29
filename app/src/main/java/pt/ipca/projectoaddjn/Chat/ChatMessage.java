@@ -1,4 +1,4 @@
-package pt.ipca.projectoaddjn.chat;
+package pt.ipca.projectoaddjn.Chat;
 
 import java.util.Date;
 

@@ -1,4 +1,4 @@
-package pt.ipca.projectoaddjn.listarJogos;
+package pt.ipca.projectoaddjn.BaseDados.Classes;
 
 public class Competicao {
 

@@ -1,10 +1,19 @@
-package pt.ipca.projectoaddjn.listarJogos;
+package pt.ipca.projectoaddjn.BaseDados.Classes;
 
 public class Equipa {
 
     public int idEquipa;
-    public  String nomeEquipa;
+    public String nomeEquipa;
     public int logoEquipa;
+    public int posicaoRanking;
+
+    //Construtor da classe equipa
+    public Equipa(int equipa, String nEquipa, int logo, int ranking){
+        this.idEquipa = equipa;
+        this.nomeEquipa = nEquipa;
+        this.logoEquipa = logo;
+        this.posicaoRanking = ranking;
+    }
 
     //Construtor da classe equipa
     public Equipa(int equipa, String nEquipa, int logo){
