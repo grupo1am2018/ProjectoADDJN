@@ -11,6 +11,7 @@ public class Jogador {
     public float jaltura;
     public String jPePreferencial;
     public String jClube;
+    public int logoClube;
 
     public Jogador(int id, int IdEquipa, int nome, String dataNascimento, String posicao, int peso, float altura, String pePreferencial, String clube) {
         this.jId = id;
