@@ -46,8 +46,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="75dp"
                     android:layout_marginLeft="-35dp"
+                    android:layout_marginTop="75dp"
                     android:fontFamily="@font/raleway_bold"
                     android:text="NEMANJNA"
                     android:textColor="#edb92e"
@@ -56,8 +56,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="115dp"
                     android:layout_marginLeft="-165dp"
+                    android:layout_marginTop="115dp"
                     android:fontFamily="@font/raleway_bold"
                     android:text="MATIC"
                     android:textColor="#edb92e"
@@ -66,9 +66,16 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    android:layout_marginTop="62dp"
                     android:layout_marginLeft="42dp"
+                    android:layout_marginTop="62dp"
                     android:src="@drawable/matic_jogador" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="-110dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/logo_united" />
             </LinearLayout>
         </LinearLayout>
 
@@ -140,13 +147,103 @@
         </LinearLayout>
 
     </LinearLayout>
+
     <ImageView
+        android:id="@+id/barra"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/barra"
+        android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
-        android:src="@drawable/barra_jogador"
-        android:layout_marginTop="24dp"/>
+        android:src="@drawable/barra_jogador" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="40dp"
+        android:text="85"
+        android:textColor="#C6363C"
+        android:textSize="45dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="245dp"
+        android:layout_marginLeft="43dp"
+        android:fontFamily="@font/raleway_bold"
+        android:text="MC/MD"
+        android:textColor="#edb92e"
+        android:textSize="13dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="120dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/raleway_semibold"
+            android:text="VEL:"
+            android:textColor="#0C4076"
+            android:layout_marginBottom="35dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:fontFamily="@font/raleway_semibold"
+            android:text="REM:"
+            android:textColor="#0C4076" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:fontFamily="@font/raleway_semibold"
+            android:text="DEF:"
+            android:textColor="#0C4076" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="120dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/raleway_semibold"
+            android:text="DRI:"
+            android:textColor="#0C4076"
+            android:layout_marginTop="35dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:fontFamily="@font/raleway_semibold"
+            android:text="PAS:"
+            android:textColor="#0C4076"
+            android:layout_marginTop="35dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:fontFamily="@font/raleway_semibold"
+            android:text="FIS:"
+            android:textColor="#0C4076"
+            android:layout_marginTop="35dp"/>
+    </LinearLayout>
+
 
 
 </android.support.percent.PercentRelativeLayout>

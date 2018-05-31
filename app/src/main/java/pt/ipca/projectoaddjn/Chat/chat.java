@@ -61,7 +61,7 @@ public class chat extends Fragment {
             }
         });
 
-        //Load content
+        // Procedimento para carregar mensagens
         displayChatMessage();
 
         return rootView;
@@ -69,7 +69,7 @@ public class chat extends Fragment {
 
     private void displayChatMessage() {
 
-        final ListView listaChat = (ListView) rootView.findViewById(R.id.listaChat);
+        ListView listaChat = (ListView) rootView.findViewById(R.id.listaChat);
         adapter = new FirebaseListAdapter<ChatMessage>(getActivity(), ChatMessage.class, R.layout.lista_chat, FirebaseDatabase.getInstance().getReference("CHAT"))
         {
             @Override
@@ -112,7 +112,7 @@ public class chat extends Fragment {
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         switch (item.getItemId()) {
             case R.id.menuchat_apagar:
-                //adapter.getRef(position).removeValue();
+                //RemoverMensagens(position);
                 return true;
             default:
                 return super.onContextItemSelected(item);
