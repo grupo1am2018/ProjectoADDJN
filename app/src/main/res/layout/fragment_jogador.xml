@@ -108,12 +108,29 @@
                     android:layout_margin="8dp"
                     android:background="#000"/>
 
-                <View
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="0.6"
                     android:layout_margin="8dp"
-                    android:background="#000"/>
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/estatisticas_jogador" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="11dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/raleway_bold"
+                        android:text="Estatística"
+                        android:textColor="#0C4076"
+                        android:textSize="10dp" />
+                </LinearLayout>
 
             </LinearLayout>
             <LinearLayout
@@ -122,26 +139,80 @@
                 android:layout_weight="0.5"
                 android:orientation="horizontal">
 
-                <View
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="8dp"
                     android:layout_weight="0.6"
-                    android:background="#000" />
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-                <View
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/calendario_jogador" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="11dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/raleway_bold"
+                        android:text="Gerir Treinos"
+                        android:textColor="#0C4076"
+                        android:textSize="10dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_margin="8dp"
                     android:layout_weight="0.6"
-                    android:background="#000"/>
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-                <View
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/anotcoes_jogador" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="11dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/raleway_bold"
+                        android:text="Apontamentos"
+                        android:textColor="#0C4076"
+                        android:textSize="10dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_margin="8dp"
                     android:layout_weight="0.6"
-                    android:background="#000"/>
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/trocar_jogador" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="11dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/raleway_bold"
+                        android:text="Trocar Jogador"
+                        android:textColor="#0C4076"
+                        android:textSize="10dp" />
+
+                </LinearLayout>
 
             </LinearLayout>
         </LinearLayout>
@@ -189,24 +260,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/raleway_semibold"
-            android:text="VEL:"
+            android:text="VEL:64"
             android:textColor="#0C4076"
             android:layout_marginBottom="35dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="65dp"
+            android:layout_marginLeft="40dp"
             android:fontFamily="@font/raleway_semibold"
-            android:text="REM:"
+            android:text="REM:70"
             android:textColor="#0C4076" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="65dp"
+            android:layout_marginLeft="40dp"
             android:fontFamily="@font/raleway_semibold"
-            android:text="DEF:"
+            android:text="DEF:80"
             android:textColor="#0C4076" />
     </LinearLayout>
 
@@ -221,25 +292,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/raleway_semibold"
-            android:text="DRI:"
+            android:text="DRI:72"
             android:textColor="#0C4076"
             android:layout_marginTop="35dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="65dp"
+            android:layout_marginLeft="40dp"
             android:fontFamily="@font/raleway_semibold"
-            android:text="PAS:"
+            android:text="PAS:76"
             android:textColor="#0C4076"
             android:layout_marginTop="35dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="70dp"
+            android:layout_marginLeft="48dp"
             android:fontFamily="@font/raleway_semibold"
-            android:text="FIS:"
+            android:text="FIS:87"
             android:textColor="#0C4076"
             android:layout_marginTop="35dp"/>
     </LinearLayout>
