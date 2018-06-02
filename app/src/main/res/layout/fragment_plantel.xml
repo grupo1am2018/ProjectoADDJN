@@ -15,32 +15,30 @@
         android:layout_alignParentTop="true"
         android:src="@drawable/barraplantel"/>
 
-    <View
-        app:layout_heightPercent="6%"
-        android:layout_width="match_parent"
-        android:background="#FFFF00"
-        android:id="@+id/bfola"
-        android:layout_marginBottom="24dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_alignParentBottom="true"
-        />
+
 
     <RelativeLayout
         android:layout_width="match_parent"
-        app:layout_heightPercent="70%"
+        app:layout_heightPercent="90%"
+        android:layout_alignParentRight="true"
         android:layout_below="@+id/bfbarra"
-        android:layout_above="@+id/bfola"
 
         android:orientation="vertical">
-
         <ImageView
-            android:id="@+id/bfcampo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.1"
-            android:src="@drawable/pitch" />
+            android:id="@+id/bfcampo"
+            android:src="@drawable/pitch"/>
 
     </RelativeLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fabPlantel"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="24dp"
+        android:src="@drawable/floppydisk"
+        android:layout_alignParentEnd="true"/>
 
 </android.support.percent.PercentRelativeLayout>

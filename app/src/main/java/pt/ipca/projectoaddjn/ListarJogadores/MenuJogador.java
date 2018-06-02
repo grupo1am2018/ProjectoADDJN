@@ -9,8 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import pt.ipca.projectoaddjn.R;
 import pt.ipca.projectoaddjn.Plantel.PlantelFragment;
+import pt.ipca.projectoaddjn.R;
 
 
 /**
