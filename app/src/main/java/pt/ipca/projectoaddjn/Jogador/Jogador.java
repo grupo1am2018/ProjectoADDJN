@@ -23,7 +23,6 @@ public class Jogador {
     public int jLogoClube;
 
     public Jogador() {
-
     }
 
     public Jogador(int id, int IdEquipa, String nome, String aplido, String dataNascimento, String posicao, float peso, float altura, String pePreferencial, String clube, int logoClube) {
