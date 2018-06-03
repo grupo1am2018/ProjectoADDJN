@@ -28,7 +28,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_JOGADOR_PESO = "Peso";
     public static final String COLUMN_JOGADOR_ALTURA = "Altura";
     public static final String COLUMN_JOGADOR_PEPREFERENCIAL = "PePreferencial";
-    public static final String[] COLUMNS_JOGADOR = {COLUMN_JOGADOR_IDJOGADOR, COLUMN_JOGADOR_IDEQUIPA, COLUMN_JOGADOR_NOME, COLUMN_JOGADOR_DATANASCIMENTO, COLUMN_JOGADOR_POSICAO, COLUMN_JOGADOR_PESO, COLUMN_JOGADOR_ALTURA, COLUMN_JOGADOR_PEPREFERENCIAL};
+    public static final String COLUMN_JOGADOR_CLUBE = "Clube";
+    public static final String COLUMN_JOGADOR_LOGOCLUBE = "LogoClube";
+    public static final String COLUMN_JOGADOR_FOTOJOGADOR = "FotoJogador";
+    public static final String[] COLUMNS_JOGADOR = {COLUMN_JOGADOR_IDJOGADOR, COLUMN_JOGADOR_IDEQUIPA, COLUMN_JOGADOR_NOME, COLUMN_JOGADOR_DATANASCIMENTO, COLUMN_JOGADOR_POSICAO, COLUMN_JOGADOR_PESO, COLUMN_JOGADOR_ALTURA, COLUMN_JOGADOR_PEPREFERENCIAL, COLUMN_JOGADOR_CLUBE, COLUMN_JOGADOR_LOGOCLUBE, COLUMN_JOGADOR_FOTOJOGADOR};
 
     // Construtor
     public DatabaseHelper(Context context) {
@@ -49,13 +52,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + "(IdJogador integer primary key,"
                 + "IdEquipa int,"
                 + "Nome String,"
+                + "Apelido String,"
                 + "DataNascimento String,"
                 + "Posicao String,"
                 + "Peso real,"
                 + "Altura real,"
                 + "PePreferencial String,"
-                + "Clube String)";
+                + "Clube String,"
+                + "LogoClube int,"
+                + "FotoJogador int)";
         sqLiteDatabase.execSQL(Jogador);
+
     }
 
     @Override
@@ -65,4 +72,5 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void erase(Context context){
         context.deleteDatabase(DATABASE_NAME);
     }
+
 }

@@ -69,7 +69,7 @@ public class FormacaoPlantel {
         FormacaoPlantel jogador = new FormacaoPlantel();
         jogador.setCodJogador(cursor.getInt(0));
         jogador.setjogadorX(cursor.getFloat(1));
-        jogador.setjogadorX(cursor.getFloat(2));
+        jogador.setjogadorY(cursor.getFloat(2));
         return jogador;
     }
 
@@ -83,6 +83,7 @@ public class FormacaoPlantel {
         db.update("FormacaoPlantel", jogador, "codJogador = " + codJogador,  null);
         db.close();
     }
+
     public static ArrayList<FormacaoPlantel> getFormacaoPlantel(Context context) {
         DatabaseHelper dbHelper = new DatabaseHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();

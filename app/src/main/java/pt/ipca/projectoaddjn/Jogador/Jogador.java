@@ -5,6 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.util.ArrayList;
+
 import pt.ipca.projectoaddjn.BaseDados.DatabaseHelper;
 import pt.ipca.projectoaddjn.R;
 
@@ -13,7 +15,7 @@ public class Jogador {
     public int jId;
     public int jIdEquipa;
     public String jNome;
-    public String jAplido;
+    public String jApelido;
     public String jDataNascimento;
     public String jPosicao;
     public float jPeso;
@@ -21,16 +23,18 @@ public class Jogador {
     public String jPePreferencial;
     public String jClube;
     public int jLogoClube;
+    public int jFoto;
 
     public Jogador() {
         
     }
 
-    public Jogador(int id, int IdEquipa, String nome, String aplido, String dataNascimento, String posicao, float peso, float altura, String pePreferencial, String clube, int logoClube) {
+    public Jogador(int id, int IdEquipa, String nome, String apelido, String dataNascimento, String posicao,
+                   float peso, float altura, String pePreferencial, String clube, int logoClube, int foto) {
         this.jId = id;
         this.jIdEquipa = IdEquipa;
         this.jNome = nome;
-        this.jAplido = aplido;
+        this.jApelido = apelido;
         this.jDataNascimento = dataNascimento;
         this.jPosicao = posicao;
         this.jPeso = peso;
@@ -38,6 +42,7 @@ public class Jogador {
         this.jPePreferencial = pePreferencial;
         this.jClube = clube;
         this.jLogoClube = logoClube;
+        this.jFoto = foto;
     }
 
     public void setIdJogador(int IdJogador) {
@@ -52,8 +57,8 @@ public class Jogador {
         this.jNome = Nome;
     }
 
-    public void setAplido(String Aplido) {
-        this.jNome = Aplido;
+    public void setApelido(String Apelido) {
+        this.jApelido = Apelido;
     }
 
     public void setDataNascimento(String DataNascimento) {
@@ -84,8 +89,14 @@ public class Jogador {
         this.jLogoClube = LogoClube;
     }
 
+    public void setFoto(int Foto) {
+        this.jFoto = Foto;
+    }
+
     // Inserir Jogador
-    public static Jogador inserirJogador(int IdJogador, int IdEquipa, String Nome, String Aplido, String DataNascimento, String Posicao, float Peso, float Altura, String PePreferencial, String Clube, int LogoClube, Context context) {
+    public static Jogador inserirJogador(int IdJogador, int IdEquipa, String Nome, String Aplido,
+                                         String DataNascimento, String Posicao, float Peso, float Altura,
+                                         String PePreferencial, String Clube, int LogoClube, int FotoJogador, Context context) {
         DatabaseHelper dpHelper = new DatabaseHelper(context);
         SQLiteDatabase database = dpHelper.getWritableDatabase();
         ContentValues jogador = new ContentValues();
@@ -93,7 +104,7 @@ public class Jogador {
         jogador.put("IdJogador", 1);
         jogador.put("IdEquipa", 1);
         jogador.put("Nome", "MATIC");
-        jogador.put("Aplido", "NEMANJNA");
+        jogador.put("Apelido", "NEMANJNA");
         jogador.put("DataNascimento", "01/08/1988");
         jogador.put("Posicao", "MC/MD");
         jogador.put("Peso", 78);
@@ -101,6 +112,7 @@ public class Jogador {
         jogador.put("PePreferencial", "Direito");
         jogador.put("Clube", "Manchester United");
         jogador.put("LogoClube", R.drawable.logo_united);
+        jogador.put("FotoJogador", R.drawable.matic_jogador);
 
         long result = database.insert("Jogador", null, jogador);
 
@@ -117,7 +129,7 @@ public class Jogador {
         jogador.setIdJogador(cursor.getInt(0));
         jogador.setIdEquipa(cursor.getInt(1));
         jogador.setNome(cursor.getString(2));
-        jogador.setAplido(cursor.getString(3));
+        jogador.setApelido(cursor.getString(3));
         jogador.setDataNascimento(cursor.getString(4));
         jogador.setPosicao(cursor.getString(5));
         jogador.setPeso(cursor.getFloat(6));
@@ -125,6 +137,24 @@ public class Jogador {
         jogador.setPePreferencial(cursor.getString(8));
         jogador.setClube(cursor.getString(9));
         jogador.setLogoClube(cursor.getInt(10));
+        jogador.setFoto(cursor.getInt(11));
         return jogador;
+    }
+
+    public static ArrayList<Jogador> getJogadores(Context context) {
+        DatabaseHelper dbHelper = new DatabaseHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        ArrayList<Jogador> aJogador = new ArrayList<>();
+        Cursor res = db.rawQuery("select * from Jogador", null);
+        res.moveToFirst();
+        while (!res.isAfterLast()) {
+            aJogador.add(new Jogador(res.getInt(0), res.getInt(1), res.getString(2), res.getString(3), res.getString(4),
+                    res.getString(5), res.getFloat(6), res.getFloat(7), res.getString(8), res.getString(9), res.getInt(10),
+                    res.getInt(11)));
+            res.moveToNext();
+        }
+        res.close();
+        db.close();
+        return aJogador;
     }
 }

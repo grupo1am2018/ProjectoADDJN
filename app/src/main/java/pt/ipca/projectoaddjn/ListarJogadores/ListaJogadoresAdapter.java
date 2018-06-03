@@ -12,20 +12,21 @@ import android.view.ViewGroup;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
+
+import pt.ipca.projectoaddjn.Jogador.Jogador;
 import pt.ipca.projectoaddjn.Jogador.JogadorFragment;
 import pt.ipca.projectoaddjn.R;
 
 public class ListaJogadoresAdapter extends RecyclerView.Adapter<ListaJogadorHolder>  {
 
-    String[] nomeJogador;
-    Bitmap[] fotoJogador;
+    ArrayList<Jogador> jogador;
     Context context;
     int devicewidth;
     int deviceheight;
 
-    public ListaJogadoresAdapter(String[] nomeJogador, Context context) {
-        this.nomeJogador = nomeJogador;
-        //this.fotoJogador = fotoJogador;
+    public ListaJogadoresAdapter(ArrayList<Jogador> jogador, Context context) {
+        this.jogador = jogador;
         this.context = context;
     }
 
@@ -33,6 +34,7 @@ public class ListaJogadoresAdapter extends RecyclerView.Adapter<ListaJogadorHold
     @Override
     public ListaJogadorHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.jogador_lista, parent, false);
+
         ListaJogadorHolder viewHolder = new ListaJogadorHolder(v);
         DisplayMetrics displaymetrics = new DisplayMetrics();
         ((Activity) context).getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
@@ -55,9 +57,9 @@ public class ListaJogadoresAdapter extends RecyclerView.Adapter<ListaJogadorHold
 
         int width = (int) Math.round(devicewidth * 0.7);
         int height = (int) (deviceheight * 0.7);
-        Picasso.with(context).load("https://as01.epimg.net/img/comunes/fotos/fichas/deportistas/a/and/large/31985.png").fit().into(holder.logo);
+        Picasso.with(context).load(jogador.get(position).jFoto).fit().into(holder.logo);
 
-        holder.name.setText(nomeJogador[position]);
+        holder.name.setText(jogador.get(position).jNome);
         holder.logo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,6 +73,6 @@ public class ListaJogadoresAdapter extends RecyclerView.Adapter<ListaJogadorHold
 
     @Override
     public int getItemCount() {
-        return nomeJogador.length;
+        return jogador.size();
     }
 }
