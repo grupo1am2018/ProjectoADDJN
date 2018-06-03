@@ -28,6 +28,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_JOGADOR_PESO = "Peso";
     public static final String COLUMN_JOGADOR_ALTURA = "Altura";
     public static final String COLUMN_JOGADOR_PEPREFERENCIAL = "PePreferencial";
+    public static final String[] COLUMNS_JOGADOR = {COLUMN_JOGADOR_IDJOGADOR, COLUMN_JOGADOR_IDEQUIPA, COLUMN_JOGADOR_NOME, COLUMN_JOGADOR_DATANASCIMENTO, COLUMN_JOGADOR_POSICAO, COLUMN_JOGADOR_PESO, COLUMN_JOGADOR_ALTURA, COLUMN_JOGADOR_PEPREFERENCIAL};
 
     // Construtor
     public DatabaseHelper(Context context) {
