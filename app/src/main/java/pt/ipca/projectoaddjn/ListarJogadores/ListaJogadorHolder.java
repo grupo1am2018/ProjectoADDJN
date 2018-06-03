@@ -19,4 +19,3 @@ public class ListaJogadorHolder extends RecyclerView.ViewHolder{
         name = itemView.findViewById(R.id.nomeJogador);
     }
 }
-
