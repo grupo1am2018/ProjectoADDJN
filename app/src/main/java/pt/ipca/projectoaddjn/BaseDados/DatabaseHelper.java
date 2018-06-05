@@ -23,6 +23,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_JOGADOR_IDJOGADOR = "IdJogador";
     public static final String COLUMN_JOGADOR_IDEQUIPA = "IdEquipa";
     public static final String COLUMN_JOGADOR_NOME = "Nome";
+    public static final String COLUMN_JOGADOR_APELIDO = "Apelido";
     public static final String COLUMN_JOGADOR_DATANASCIMENTO ="DataNascimento";
     public static final String COLUMN_JOGADOR_POSICAO = "Posicao";
     public static final String COLUMN_JOGADOR_PESO = "Peso";
@@ -30,8 +31,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_JOGADOR_PEPREFERENCIAL = "PePreferencial";
     public static final String COLUMN_JOGADOR_CLUBE = "Clube";
     public static final String COLUMN_JOGADOR_LOGOCLUBE = "LogoClube";
+    public static final String COLUMN_JOGADOR_NUMERO = "Numero";
     public static final String COLUMN_JOGADOR_FOTOJOGADOR = "FotoJogador";
-    public static final String[] COLUMNS_JOGADOR = {COLUMN_JOGADOR_IDJOGADOR, COLUMN_JOGADOR_IDEQUIPA, COLUMN_JOGADOR_NOME, COLUMN_JOGADOR_DATANASCIMENTO, COLUMN_JOGADOR_POSICAO, COLUMN_JOGADOR_PESO, COLUMN_JOGADOR_ALTURA, COLUMN_JOGADOR_PEPREFERENCIAL, COLUMN_JOGADOR_CLUBE, COLUMN_JOGADOR_LOGOCLUBE, COLUMN_JOGADOR_FOTOJOGADOR};
+    public static final String[] COLUMNS_JOGADOR = {COLUMN_JOGADOR_IDJOGADOR, COLUMN_JOGADOR_IDEQUIPA, COLUMN_JOGADOR_NOME, COLUMN_JOGADOR_DATANASCIMENTO, COLUMN_JOGADOR_POSICAO, COLUMN_JOGADOR_PESO, COLUMN_JOGADOR_ALTURA, COLUMN_JOGADOR_PEPREFERENCIAL, COLUMN_JOGADOR_CLUBE, COLUMN_JOGADOR_LOGOCLUBE, COLUMN_JOGADOR_NUMERO, COLUMN_JOGADOR_FOTOJOGADOR};
 
     // Construtor
     public DatabaseHelper(Context context) {
@@ -49,7 +51,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // Criar a Tabela para o Jogador
         String Jogador = "CREATE TABLE Jogador"
-                + "(IdJogador integer primary key,"
+                + "(IdJogador integer primary key AUTOINCREMENT,"
                 + "IdEquipa int,"
                 + "Nome String,"
                 + "Apelido String,"
@@ -60,6 +62,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + "PePreferencial String,"
                 + "Clube String,"
                 + "LogoClube int,"
+                + "NumeroJogador int,"
                 + "FotoJogador int)";
         sqLiteDatabase.execSQL(Jogador);
 
@@ -69,6 +72,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
     }
+
     public void erase(Context context){
         context.deleteDatabase(DATABASE_NAME);
     }

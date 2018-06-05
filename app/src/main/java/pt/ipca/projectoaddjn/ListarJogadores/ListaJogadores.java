@@ -49,10 +49,16 @@ public class ListaJogadores extends Fragment {
         DatabaseHelper dbh = new DatabaseHelper(getActivity());
         dbh.erase(getActivity());
         SQLiteDatabase db = dbh.getWritableDatabase();
-        Jogador inserirJogador = Jogador.inserirJogador(0, 0, null, null,
-                null, null, 0, 0, null,null,
-        0, 0, getActivity());
-        ArrayList<Jogador> jogadores = Jogador.getJogadores(getActivity());
+
+        // Procedimentos para inserir jogadores
+        Jogador inserirMatic = Jogador.inserirJogador(1, "Matic", "Nemanja", "01/08/1988",
+                "MC/MD", 78, 1.94F, "Esquerdo", "Manchester United", R.drawable.logo_united,
+        R.drawable.matic_jogador, 21, getActivity());
+
+        Jogador inseriJovanocic = Jogador.inserirJogador(1, "Aleksandar", "Jovanivic", "06/12/1992",
+                "GR", 85, 1.92F, "Direito", "Aarhus", R.drawable.logo_united,
+                R.drawable.matic_jogador, 21, getActivity());
+
 
 
         //Cria uma variavel da classe adaptador
