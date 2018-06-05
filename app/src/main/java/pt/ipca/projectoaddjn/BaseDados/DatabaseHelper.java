@@ -42,12 +42,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        // Criar a Tabela para o plantel
-        String jogadorPlantel = "CREATE TABLE FormacaoPlantel"
-                + "(codJogador integer primary key,"
-                + " x real,"
-                + " y real)";
-        sqLiteDatabase.execSQL(jogadorPlantel);
 
         // Criar a Tabela para o Jogador
         String Jogador = "CREATE TABLE Jogador"
@@ -65,6 +59,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + "NumeroJogador int,"
                 + "FotoJogador int)";
         sqLiteDatabase.execSQL(Jogador);
+
+        // Criar a Tabela para o plantel
+        String jogadorPlantel = "CREATE TABLE FormacaoPlantel"
+                + "(codJogador integer primary key,"
+                + " x real,"
+                + " y real)";
+        sqLiteDatabase.execSQL(jogadorPlantel);
+
 
     }
 
