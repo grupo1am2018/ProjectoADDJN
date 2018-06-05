@@ -79,4 +79,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         context.deleteDatabase(DATABASE_NAME);
     }
 
+    public Cursor getListContents(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor data = db.rawQuery("SELECT * FROM " + COLUMNS_JOGADOR, null);
+        return data;
+    }
+
 }

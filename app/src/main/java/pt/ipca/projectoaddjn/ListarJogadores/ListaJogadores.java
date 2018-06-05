@@ -28,6 +28,7 @@ import pt.ipca.projectoaddjn.R;
 public class ListaJogadores extends Fragment {
 
     private View rootView;
+    DatabaseHelper dbh;
 
     public ListaJogadores() {
         // Required empty public constructor
@@ -46,8 +47,7 @@ public class ListaJogadores extends Fragment {
 
         //Cria uma string e insere os jogadores na view
         //Aqui pode ser mudado para um array de jogadores e mandado para o construtor do adapter
-        DatabaseHelper dbh = new DatabaseHelper(getActivity());
-        dbh.erase(getActivity());
+        dbh = new DatabaseHelper(getActivity());
         SQLiteDatabase db = dbh.getWritableDatabase();
 
         // Procedimentos para inserir jogadores
@@ -128,6 +128,51 @@ public class ListaJogadores extends Fragment {
         Jogador inserirLjajic = Jogador.inserirJogador(1, "Ljajić", "Adem", "29/09/1991",
                 "MO", 72, 1.82F, "Direito", "Torino", R.drawable.torino_logo,
                 R.drawable.ljajic_adem, 22, getActivity());
+
+        Jogador inserirMilivojevic = Jogador.inserirJogador(1, "Milivojević", "Luka", "07/04/1991",
+                "MD", 78, 1.82F, "Direito", "Crystal Palace FC", R.drawable.crysal_logo,
+                R.drawable.luka_milivojevic, 4, getActivity());
+
+        Jogador inserirTadic = Jogador.inserirJogador(1, "Tadić", "Dusan", "20/11/1988",
+                "M0", 74, 1.81F, "Esquerdo", "Southampton", R.drawable.southampnon_logo,
+                R.drawable.dusan_basta, 10, getActivity());
+
+        Jogador inserirKostic = Jogador.inserirJogador(1, "Kostić", "Filip", "01/11/1992",
+                "EE", 70, 1.78F, "Esquerdo", "Hamburger SV", R.drawable.hamburgo_logo,
+                R.drawable.kostic_filip, 17, getActivity());
+
+        Jogador inserirNemanjaMaksimovic = Jogador.inserirJogador(1, "Maksimović", "Nemanja", "26/01/1995",
+                "MC", 75, 1.85F, "Direito", "Valencia CF", R.drawable.valencia_logo,
+                R.drawable.maksimovic_nemanja, 23, getActivity());
+
+        Jogador inserirSergej = Jogador.inserirJogador(1, "Milinković-Savić", "Sergej", "27/02/1995",
+                "MC", 76, 1.86F, "Direito", "Lazio", R.drawable.lazio_logo,
+                R.drawable.milinkovic_savic_sergej, 20, getActivity());
+
+        Jogador inserirGacinovic = Jogador.inserirJogador(1, "Gaćinović", "Mijat", "08/02/1995",
+                "MO", 68, 1.75F, "Direito", "Eintracht Fr", R.drawable.eintracht_logo,
+                R.drawable.gacinovic_mijat, 14, getActivity());
+
+        Jogador inserirZivkovic = Jogador.inserirJogador(1, "Živković", "Andrija", "11/07/1996",
+                "MO", 60, 1.65F, "Esquerdo", "Benfica", R.drawable.benfica_logo,
+                R.drawable.andrija_zivkovic, 7, getActivity());
+
+        Jogador inserirMatic = Jogador.inserirJogador(1, "Matić", "Nemanja", "01/08/1988",
+                "MCD", 82, 1.94F, "Esquerdo", "Benfica", R.drawable.logo_united,
+                R.drawable.nemanja_matic, 21, getActivity());
+
+        Jogador inserirPrijovic = Jogador.inserirJogador(1, "Prijović", "Аleksandar", "21/04/1990",
+                "PL", 85, 1.91F, "Direito", "PAOK FC", R.drawable.paok_logo,
+                R.drawable.prijovic_aleksandar, 8, getActivity());
+
+        Jogador inserirMitrovic = Jogador.inserirJogador(1, "Mitrović", "Аleksandar", "16/09/1994",
+                "PL", 80, 1.89F, "Direito", "Fulham", R.drawable.fulham_logo,
+                R.drawable.aleksandar_mitrovic, 9, getActivity());
+
+        Jogador inserirJovic = Jogador.inserirJogador(1, "Jović", "Luka", "23/12/1997",
+                "PL", 62, 1.75F, "Direito", "Benfica", R.drawable.benfica_logo,
+                R.drawable.jovic_luka, 17, getActivity());
+
 
         //Cria uma variavel da classe adaptador
         ListaJogadoresAdapter adapter = new ListaJogadoresAdapter(jogadores, getActivity());
