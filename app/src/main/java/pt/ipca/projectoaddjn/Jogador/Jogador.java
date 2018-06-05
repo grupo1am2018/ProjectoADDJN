@@ -46,56 +46,108 @@ public class Jogador {
         this.jNumero = numero;
     }
 
-    public void setIdJogador(int IdJogador) {
-        this.jId = IdJogador;
+    public int getjId() {
+        return jId;
     }
 
-    public void setIdEquipa(int IdEquipa) {
-        this.jIdEquipa = IdEquipa;
+    public void setjId(int jId) {
+        this.jId = jId;
     }
 
-    public void setNome(String Nome) {
-        this.jNome = Nome;
+    public int getjIdEquipa() {
+        return jIdEquipa;
     }
 
-    public void setApelido(String Apelido) {
-        this.jApelido = Apelido;
+    public void setjIdEquipa(int jIdEquipa) {
+        this.jIdEquipa = jIdEquipa;
     }
 
-    public void setDataNascimento(String DataNascimento) {
-        this.jDataNascimento = DataNascimento;
+    public String getjNome() {
+        return jNome;
     }
 
-    public void setPosicao(String Posicao) {
-        this.jPosicao = Posicao;
+    public void setjNome(String jNome) {
+        this.jNome = jNome;
     }
 
-    public void setPeso(float Peso) {
-        this.jPeso = Peso;
+    public String getjApelido() {
+        return jApelido;
     }
 
-    public void setAltura(float Altura) {
-        this.jaltura = Altura;
+    public void setjApelido(String jApelido) {
+        this.jApelido = jApelido;
     }
 
-    public void setPePreferencial(String PePreferencial) {
-        this.jPePreferencial = PePreferencial;
+    public String getjDataNascimento() {
+        return jDataNascimento;
     }
 
-    public void setClube(String Clube) {
-        this.jClube = Clube;
+    public void setjDataNascimento(String jDataNascimento) {
+        this.jDataNascimento = jDataNascimento;
     }
 
-    public void setLogoClube(int LogoClube) {
-        this.jLogoClube = LogoClube;
+    public String getjPosicao() {
+        return jPosicao;
     }
 
-    public void setFoto(int Foto) {
-        this.jFoto = Foto;
+    public void setjPosicao(String jPosicao) {
+        this.jPosicao = jPosicao;
     }
 
-    public void setNumero(int numero) {
-        this.jNumero = numero;
+    public float getjPeso() {
+        return jPeso;
+    }
+
+    public void setjPeso(float jPeso) {
+        this.jPeso = jPeso;
+    }
+
+    public float getJaltura() {
+        return jaltura;
+    }
+
+    public void setJaltura(float jaltura) {
+        this.jaltura = jaltura;
+    }
+
+    public String getjPePreferencial() {
+        return jPePreferencial;
+    }
+
+    public void setjPePreferencial(String jPePreferencial) {
+        this.jPePreferencial = jPePreferencial;
+    }
+
+    public String getjClube() {
+        return jClube;
+    }
+
+    public void setjClube(String jClube) {
+        this.jClube = jClube;
+    }
+
+    public int getjLogoClube() {
+        return jLogoClube;
+    }
+
+    public void setjLogoClube(int jLogoClube) {
+        this.jLogoClube = jLogoClube;
+    }
+
+    public int getjFoto() {
+        return jFoto;
+    }
+
+    public void setjFoto(int jFoto) {
+        this.jFoto = jFoto;
+    }
+
+    public int getjNumero() {
+        return jNumero;
+    }
+
+    public void setjNumero(int jNumero) {
+        this.jNumero = jNumero;
     }
 
     // Inserir Jogador
@@ -131,19 +183,19 @@ public class Jogador {
 
     public static Jogador novoJogador(Cursor cursor) {
         Jogador jogador = new Jogador();
-        jogador.setIdJogador(cursor.getInt(0));
-        jogador.setIdEquipa(cursor.getInt(1));
-        jogador.setNome(cursor.getString(2));
-        jogador.setApelido(cursor.getString(3));
-        jogador.setDataNascimento(cursor.getString(4));
-        jogador.setPosicao(cursor.getString(5));
-        jogador.setPeso(cursor.getFloat(6));
-        jogador.setAltura(cursor.getFloat(7));
-        jogador.setPePreferencial(cursor.getString(8));
-        jogador.setClube(cursor.getString(9));
-        jogador.setLogoClube(cursor.getInt(10));
-        jogador.setFoto(cursor.getInt(11));
-        jogador.setNumero(cursor.getInt(12));
+        jogador.setjId(cursor.getInt(0));
+        jogador.setjIdEquipa(cursor.getInt(1));
+        jogador.setjNome(cursor.getString(2));
+        jogador.setjApelido(cursor.getString(3));
+        jogador.setjDataNascimento(cursor.getString(4));
+        jogador.setjPosicao(cursor.getString(5));
+        jogador.setjPeso(cursor.getFloat(6));
+        jogador.setJaltura(cursor.getFloat(7));
+        jogador.setjPePreferencial(cursor.getString(8));
+        jogador.setjClube(cursor.getString(9));
+        jogador.setjLogoClube(cursor.getInt(10));
+        jogador.setjFoto(cursor.getInt(11));
+        jogador.setjNumero(cursor.getInt(12));
         return jogador;
     }
 
