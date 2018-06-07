@@ -57,10 +57,10 @@ public class ListaJogadoresAdapter extends RecyclerView.Adapter<ListaJogadorHold
 
         int width = (int) Math.round(devicewidth * 0.7);
         int height = (int) (deviceheight * 0.7);
-        Picasso.with(context).load(jogador.get(position).jFoto).fit().into(holder.logo);
+        Picasso.with(context).load(jogador.get(position).jFoto).fit().into(holder.foto);
 
         holder.name.setText(jogador.get(position).jNome);
-        holder.logo.setOnClickListener(new View.OnClickListener() {
+        holder.foto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

@@ -183,19 +183,19 @@ public class Jogador {
 
     public static Jogador novoJogador(Cursor cursor) {
         Jogador jogador = new Jogador();
-        jogador.setjId(cursor.getInt(0));
-        jogador.setjIdEquipa(cursor.getInt(1));
-        jogador.setjNome(cursor.getString(2));
-        jogador.setjApelido(cursor.getString(3));
-        jogador.setjDataNascimento(cursor.getString(4));
-        jogador.setjPosicao(cursor.getString(5));
-        jogador.setjPeso(cursor.getFloat(6));
-        jogador.setJaltura(cursor.getFloat(7));
-        jogador.setjPePreferencial(cursor.getString(8));
-        jogador.setjClube(cursor.getString(9));
-        jogador.setjLogoClube(cursor.getInt(10));
-        jogador.setjFoto(cursor.getInt(11));
-        jogador.setjNumero(cursor.getInt(12));
+        jogador.setjId(cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_JOGADOR_IDJOGADOR)));
+        jogador.setjIdEquipa(cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_JOGADOR_IDEQUIPA)));
+        jogador.setjNome(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_JOGADOR_NOME)));
+        jogador.setjApelido(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_JOGADOR_APELIDO)));
+        jogador.setjDataNascimento(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_JOGADOR_DATANASCIMENTO)));
+        jogador.setjPosicao(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_JOGADOR_POSICAO)));
+        jogador.setjPeso(cursor.getFloat(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_JOGADOR_PESO)));
+        jogador.setJaltura(cursor.getFloat(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_JOGADOR_ALTURA)));
+        jogador.setjPePreferencial(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_JOGADOR_PEPREFERENCIAL)));
+        jogador.setjClube(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_JOGADOR_CLUBE)));
+        jogador.setjLogoClube(cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_JOGADOR_LOGOCLUBE)));
+        jogador.setjFoto(cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_JOGADOR_FOTOJOGADOR)));
+        jogador.setjNumero(cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_JOGADOR_NUMERO)));
         return jogador;
     }
 

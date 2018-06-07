@@ -68,7 +68,7 @@
                     android:layout_height="200dp"
                     android:layout_marginLeft="42dp"
                     android:layout_marginTop="62dp"
-                    android:src="@drawable/matic_jogador" />
+                    android:src="@drawable/nemanja_matic" />
 
                 <ImageView
                     android:layout_width="wrap_content"

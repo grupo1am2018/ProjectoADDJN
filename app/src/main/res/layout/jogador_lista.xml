@@ -15,11 +15,11 @@
         android:id="@+id/fundo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/fundo"
+        android:src="@drawable/lista_jogador_fundo"
         android:foregroundGravity="center"/>
 
     <ImageView
-        android:id="@+id/fotoJogador"
+        android:id="@+id/lista_foto"
         app:layout_widthPercent="90%"
         app:layout_heightPercent="60%"
         android:layout_alignParentBottom="true"
@@ -33,7 +33,7 @@
         app:layout_marginBottomPercent="12%"
         >
         <TextView
-            android:id="@+id/numJogador"
+            android:id="@+id/lista_numero"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:textAlignment="viewEnd"
@@ -44,7 +44,7 @@
             android:fontFamily="raleaway"
             />
         <TextView
-            android:id="@+id/nomeJogador"
+            android:id="@+id/lista_nome"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:textAlignment="center"
