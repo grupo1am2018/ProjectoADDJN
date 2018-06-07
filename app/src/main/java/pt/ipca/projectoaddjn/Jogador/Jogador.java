@@ -171,9 +171,9 @@ public class Jogador {
         jogador.put(DatabaseHelper.COLUMN_JOGADOR_FOTOJOGADOR, FotoJogador);
         jogador.put(DatabaseHelper.COLUMN_JOGADOR_NUMERO, Numero);
 
-        long result = database.insert("Jogador", null, jogador);
+        long result = database.insert(DatabaseHelper.TABLE_JOGADOR, null, jogador);
 
-        Cursor cursor = database.query("Jogador", DatabaseHelper.COLUMNS_JOGADOR, "IdJogador" + " = " + result, null, null, null, null);
+        Cursor cursor = database.query(DatabaseHelper.TABLE_JOGADOR, DatabaseHelper.COLUMNS_JOGADOR, null, null, null, null, DatabaseHelper.COLUMN_JOGADOR_NUMERO);
         cursor.moveToFirst();
         Jogador jogadorNovo = novoJogador(cursor);
         cursor.close();
@@ -206,9 +206,20 @@ public class Jogador {
         Cursor res = db.rawQuery("select * from Jogador", null);
         res.moveToFirst();
         while (!res.isAfterLast()) {
-            aJogador.add(new Jogador(res.getInt(0), res.getInt(1), res.getString(2), res.getString(3), res.getString(4),
-                    res.getString(5), res.getFloat(6), res.getFloat(7), res.getString(8), res.getString(9), res.getInt(10),
-                    res.getInt(11), res.getInt(12)));
+            aJogador.add(new Jogador(
+                    res.getInt(res.getColumnIndexOrThrow(DatabaseHelper.COLUMN_JOGADOR_IDJOGADOR)),
+                    res.getInt(res.getColumnIndexOrThrow(DatabaseHelper.COLUMN_JOGADOR_IDEQUIPA)),
+                    res.getString(res.getColumnIndexOrThrow(DatabaseHelper.COLUMN_JOGADOR_NOME)),
+                    res.getString(res.getColumnIndexOrThrow(DatabaseHelper.COLUMN_JOGADOR_APELIDO)),
+                    res.getString(res.getColumnIndexOrThrow(DatabaseHelper.COLUMN_JOGADOR_DATANASCIMENTO)),
+                    res.getString(res.getColumnIndexOrThrow(DatabaseHelper.COLUMN_JOGADOR_POSICAO)),
+                    res.getFloat(res.getColumnIndexOrThrow(DatabaseHelper.COLUMN_JOGADOR_PESO)),
+                    res.getFloat(res.getColumnIndexOrThrow(DatabaseHelper.COLUMN_JOGADOR_ALTURA)),
+                    res.getString(res.getColumnIndexOrThrow(DatabaseHelper.COLUMN_JOGADOR_PEPREFERENCIAL)),
+                    res.getString(res.getColumnIndexOrThrow(DatabaseHelper.COLUMN_JOGADOR_CLUBE)),
+                    res.getInt(res.getColumnIndexOrThrow(DatabaseHelper.COLUMN_JOGADOR_LOGOCLUBE)),
+                    res.getInt(res.getColumnIndexOrThrow(DatabaseHelper.COLUMN_JOGADOR_FOTOJOGADOR)),
+                    res.getInt(res.getColumnIndexOrThrow(DatabaseHelper.COLUMN_JOGADOR_NUMERO))));
             res.moveToNext();
         }
         res.close();

@@ -1,8 +1,6 @@
 package pt.ipca.projectoaddjn.BaseDados;
 
-import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -12,6 +10,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // Nome da Base de dados
     private static final String DATABASE_NAME = "projectoADDJN.db";
+
+    //Tabelas
+    public static final String TABLE_JOGADOR = "Jogador";
+    public static final String TABLE_FORMACAO_PLANTEL = "FormacaoPlantel";
 
     // Tabela para o plantel
     public static final String COLUMN_PLANTEL_CODJOGADOR = "codJogador";
@@ -33,7 +35,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_JOGADOR_LOGOCLUBE = "LogoClube";
     public static final String COLUMN_JOGADOR_NUMERO = "Numero";
     public static final String COLUMN_JOGADOR_FOTOJOGADOR = "FotoJogador";
-    public static final String[] COLUMNS_JOGADOR = {COLUMN_JOGADOR_IDJOGADOR, COLUMN_JOGADOR_IDEQUIPA, COLUMN_JOGADOR_NOME, COLUMN_JOGADOR_DATANASCIMENTO, COLUMN_JOGADOR_POSICAO, COLUMN_JOGADOR_PESO, COLUMN_JOGADOR_ALTURA, COLUMN_JOGADOR_PEPREFERENCIAL, COLUMN_JOGADOR_CLUBE, COLUMN_JOGADOR_LOGOCLUBE, COLUMN_JOGADOR_NUMERO, COLUMN_JOGADOR_FOTOJOGADOR};
+    public static final String[] COLUMNS_JOGADOR = {COLUMN_JOGADOR_IDJOGADOR, COLUMN_JOGADOR_IDEQUIPA, COLUMN_JOGADOR_NOME,
+            COLUMN_JOGADOR_APELIDO, COLUMN_JOGADOR_DATANASCIMENTO, COLUMN_JOGADOR_POSICAO, COLUMN_JOGADOR_PESO,
+            COLUMN_JOGADOR_ALTURA, COLUMN_JOGADOR_PEPREFERENCIAL, COLUMN_JOGADOR_CLUBE, COLUMN_JOGADOR_LOGOCLUBE,
+            COLUMN_JOGADOR_NUMERO, COLUMN_JOGADOR_FOTOJOGADOR};
 
     // Construtor
     public DatabaseHelper(Context context) {
@@ -44,27 +49,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
         // Criar a Tabela para o Jogador
-        String Jogador = "CREATE TABLE Jogador"
-                + "(IdJogador integer primary key AUTOINCREMENT,"
-                + "IdEquipa int,"
-                + "Nome String,"
-                + "Apelido String,"
-                + "DataNascimento String,"
-                + "Posicao String,"
-                + "Peso real,"
-                + "Altura real,"
-                + "PePreferencial String,"
-                + "Clube String,"
-                + "LogoClube int,"
-                + "NumeroJogador int,"
-                + "FotoJogador int)";
+        String Jogador = "CREATE TABLE " + TABLE_JOGADOR
+                + "(" + COLUMN_JOGADOR_IDJOGADOR + " integer primary key AUTOINCREMENT,"
+                + COLUMN_JOGADOR_IDEQUIPA +  " integer, "
+                + COLUMN_JOGADOR_NOME + " text, "
+                + COLUMN_JOGADOR_APELIDO + " text, "
+                + COLUMN_JOGADOR_DATANASCIMENTO + " text, "
+                + COLUMN_JOGADOR_POSICAO + " text, "
+                + COLUMN_JOGADOR_PESO + " real, "
+                + COLUMN_JOGADOR_ALTURA + " real, "
+                + COLUMN_JOGADOR_PEPREFERENCIAL + " text, "
+                + COLUMN_JOGADOR_CLUBE + " text, "
+                + COLUMN_JOGADOR_LOGOCLUBE + " integer, "
+                + COLUMN_JOGADOR_NUMERO + " integer NOT NULL UNIQUE, "
+                + COLUMN_JOGADOR_FOTOJOGADOR + " integer)";
         sqLiteDatabase.execSQL(Jogador);
 
         // Criar a Tabela para o plantel
-        String jogadorPlantel = "CREATE TABLE FormacaoPlantel"
-                + "(codJogador integer primary key,"
-                + " x real,"
-                + " y real)";
+        String jogadorPlantel = "CREATE TABLE " + TABLE_FORMACAO_PLANTEL
+                + "(" + COLUMN_PLANTEL_CODJOGADOR + " integer primary key,"
+                + COLUMN_PLANTEL_X + " real,"
+                + COLUMN_PLANTEL_Y + " real)";
         sqLiteDatabase.execSQL(jogadorPlantel);
 
 
@@ -77,12 +82,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public void erase(Context context){
         context.deleteDatabase(DATABASE_NAME);
-    }
-
-    public Cursor getListContents(){
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor data = db.rawQuery("SELECT * FROM " + COLUMNS_JOGADOR, null);
-        return data;
     }
 
 }
