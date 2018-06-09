@@ -5,6 +5,7 @@ public class EstatisticaJogo {
     public int estIdJogo;
     public int jId;
     public int idEquipa;
+    public int estgolos;
     public double estJogPossedeBola;
     public int estJogTentativasDeGolo;
     public int estJogRematesaBaliza;
@@ -18,10 +19,11 @@ public class EstatisticaJogo {
     public int estJogCartoesVermelhos;
     public int estJogForadeJogo;
 
-    public EstatisticaJogo(int Id, int jId, int idEquipa, double possedeBola, int tentativasDeGolo, int rematesaBaliza, int remates, int rematesFora, int livres, int cantos, int lancamentos, int defesasGuardaRedes, int cartoesAmarelos, int cartoesVermelhos, int foradeJogo) {
+    public EstatisticaJogo(int Id, int jId, int idEquipa, int golos, double possedeBola, int tentativasDeGolo, int rematesaBaliza, int remates, int rematesFora, int livres, int cantos, int lancamentos, int defesasGuardaRedes, int cartoesAmarelos, int cartoesVermelhos, int foradeJogo) {
         this.estIdJogo = Id;
         this.jId = jId;
         this.idEquipa = idEquipa;
+        this.estgolos = golos;
         this.estJogPossedeBola = possedeBola;
         this.estJogTentativasDeGolo = tentativasDeGolo;
         this.estJogRematesaBaliza = rematesaBaliza;

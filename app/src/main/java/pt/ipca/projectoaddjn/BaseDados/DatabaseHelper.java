@@ -14,6 +14,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //Tabelas
     public static final String TABLE_JOGADOR = "Jogador";
     public static final String TABLE_FORMACAO_PLANTEL = "FormacaoPlantel";
+    public static final String TABLE_JOGOS = "Jogos";
 
     // Tabela para o plantel
     public static final String COLUMN_PLANTEL_CODJOGADOR = "codJogador";
@@ -39,6 +40,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             COLUMN_JOGADOR_APELIDO, COLUMN_JOGADOR_DATANASCIMENTO, COLUMN_JOGADOR_POSICAO, COLUMN_JOGADOR_PESO,
             COLUMN_JOGADOR_ALTURA, COLUMN_JOGADOR_PEPREFERENCIAL, COLUMN_JOGADOR_CLUBE, COLUMN_JOGADOR_LOGOCLUBE,
             COLUMN_JOGADOR_NUMERO, COLUMN_JOGADOR_FOTOJOGADOR};
+
+    // Tabela para os jogos
+    public static final String COLUMN_JOGOS_IDJOGOS = "IdJogos";
+    public static final String COLUMN_JOGOS_IDCOMPETICAO = "IdCompeticao";
+    public static final String COLUMN_JOGOS_IDEQUIPA1 = "IdEquipa1";
+    public static final String COLUMN_JOGOS_IDEQUIPA2 = "IdEquipa2";
+    public static final String COLUMN_JOGOS_DATA = "Data";
+    public static final String[] COLUMNS_JOGOS = {COLUMN_JOGOS_IDJOGOS, COLUMN_JOGOS_IDCOMPETICAO,COLUMN_JOGOS_IDEQUIPA1,
+            COLUMN_JOGOS_IDEQUIPA2, COLUMN_JOGOS_DATA};
 
     // Construtor
     public DatabaseHelper(Context context) {
@@ -71,6 +81,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + COLUMN_PLANTEL_X + " real,"
                 + COLUMN_PLANTEL_Y + " real)";
         sqLiteDatabase.execSQL(jogadorPlantel);
+
+        // Criar a Tabela para os jogos
+        String jogos = "CREATE TABLE " + TABLE_JOGOS
+                + "(" + COLUMN_JOGOS_IDJOGOS + " interger primary key AUTOINCREMENT,"
+                + COLUMN_JOGOS_IDCOMPETICAO + " interger, "
+                + COLUMN_JOGOS_IDEQUIPA1 + " interger, "
+                + COLUMN_JOGOS_IDEQUIPA2 + " interger, "
+                + COLUMN_JOGOS_DATA + " text)";
+        sqLiteDatabase.execSQL(jogos);
 
 
     }

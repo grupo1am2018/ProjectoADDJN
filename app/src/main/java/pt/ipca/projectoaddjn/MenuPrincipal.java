@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import pt.ipca.projectoaddjn.Chat.chat;
 import pt.ipca.projectoaddjn.ListarJogadores.MenuJogador;
 import pt.ipca.projectoaddjn.ListarJogos.listarJogos;
+import pt.ipca.projectoaddjn.Taticas.Taticas;
 
 
 public class MenuPrincipal extends AppCompatActivity {
@@ -31,6 +32,7 @@ public class MenuPrincipal extends AppCompatActivity {
                 case R.id.navigation_home:
                     return true;
                 case R.id.navigation_calendario:
+                    transaction.replace(R.id.container, new Taticas()).commit();
                     return true;
                 case R.id.navigation_chat:
                     transaction.replace(R.id.container, new chat()).commit();
